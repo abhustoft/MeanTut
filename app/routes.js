@@ -35,6 +35,7 @@ module.exports = function(app, express) {
 
             var nerd = new Nerd(); 		// create a new instance of the Nerd model
             nerd.name = req.body.name;  // set the nerds name (comes from the request)
+            nerd.street = req.body.street;
 
             // save the nerd and check for errors
             nerd.save(function(err) {

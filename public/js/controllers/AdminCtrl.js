@@ -1,15 +1,14 @@
 
-angular.module('AdminCtrl', []).controller('AdminController', function($scope, terdFactory) {
+angular.module('AdminCtrl', []).controller('AdminController', function($scope, nerdFactory) {
 
-    $scope.admin = 'This is admin controller';
     $scope.user = {};
 
     $scope.saveUser = function (user) {
         $scope.user = angular.copy(user);
         console.log($scope.user.firstName);
-        var nerd = {'name': $scope.user.firstName};
+        var nerd = {'name': $scope.user.firstName,'street': $scope.user.street};
         console.log(nerd);
-        terdFactory.save(nerd);
+        nerdFactory.save(nerd);
     };
 
 });
